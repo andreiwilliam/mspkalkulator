@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+ function addChar(input, character) {
+ if(input.value == null || input.value == "0")
+ input.value = character
+ else
+ input.value += character
+ }
+
+ function ideal(form) {
+ form.bbi.value = eval(form.bb.value) / (eval(form.tb.value) * eval(form.tb.value))
+ }
+ 
+ 
+ function checkNum(str) {
+ for (var i = 0; i< str.length; i++) {
+ var ch = str.substring(i, i+1)
+ if (ch < "0" || ch >"9") {
+ if (ch != "/" && ch != "*" && ch != "+" && ch != "-" && ch != "."
+ && ch != "(" && ch!= ")") {
+ alert("invalid entry!")
+ return false
+ }
+ }
+ }
+ return true
+ }
+ 
+</SCRIPT>
+<link href="style.css" rel="stylesheet">
+<title>Kalkulator Berat Badan Ideal</title>
+</head>
+<body>
+<h1 ALIGN="center"> <p style="border: solid 1px #29447E; background: #8a9ac5; padding: 15px; margin: 0; 
+	text-align: center; line-height: 23px; color: white; font-size: 20px">Kalkulator Berat Badan Ideal</p>
+	<FORM NAME="bangundatar">
+ <!---------------------------------------------------------------------(1)--------------------------------------------------------------------------------->
+<table>
+<TR>
+<TD COLSPAN="3" ALIGN="left">
+ <FORM NAME="bangundatar1">
+ <TABLE id="beratbadan" CELLSPACING="15">
+<TR>
+<TD COLSPAN="3" ALIGN="left">
+<h1 class="judul" >Berat Badan Ideal</h1>
+<br>
+<h1> Tinggi Badan (meter), cth: 1.7  </h1>
+<INPUT NAME="tb" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<br><br>
+<h1> Berat Badan (kg) : </h1>
+<INPUT NAME="bb" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="BMI" ONCLICK="if (checkNum(this.form.tb.value)&&(this.form.bb.value)) { ideal(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="bbi" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<tr>
+<td align = "left"><br><br>
+<h1> Standar BMI Untuk Wanita : <br><br>
+
+<18       =  Anda kekurangan berat badan/kurus<br>
+18 - 25  =  Berat badan normal atau ideal<br>
+25 - 27  =  Anda kelebihan berat badan<br>
+> 27      =  Obesitas, sebaiknya segera lakukan program penurunan berat badan<br><br><br>
+
+Standar BMI Untuk Pria : <br><br>
+
+<17        =  Anda kekurangan berat badan/kurus<br>
+17 - 23   =  Berat badan normal atau ideal<br>
+23 - 27   =  Anda kelebihan berat badan<br>
+> 27       =  Obesitas, sebaiknya segera lakukan program penurunan berat badan
+</h1>
+</td>
+</tr>
+</TR>
+
+
+</table>
+</form>
+</td>
+
+ <!-----------------------------------------------------------------------(2)-------------------------------------------------------------------------------->
+</table>
+</tr>
+
+
+
+ <!-----------------------------------------------------------------------(2)-------------------------------------------------------------------------------->
+<FORM NAME="Menu">
+	<TABLE id="menu" CELLSPACING="0">
+	<TR>
+	<TD ALIGN="center">
+	<INPUT class="myButton" TYPE="button" VALUE="Scientific" ONCLICK="window.location = 'index.html';"/>
+	</TD>
+	<TD ALIGN="center">
+	<INPUT class="myButton" TYPE="button" VALUE="Bangun Datar" ONCLICK="window.location = 'Kal_2D.html';"/>
+	</TD>
+	<TD ALIGN="center">
+	<INPUT class="myButton" TYPE="button" VALUE="Bangun Ruang" ONCLICK="window.location = 'Kal_3D.html';"/>
+	</TD>
+	
+
+
+</body>
+</html>

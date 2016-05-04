@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+ function addChar(input, character) {
+ if(input.value == null || input.value == "0")
+ input.value = character
+ else
+ input.value += character
+ }
+
+ function square(form) {
+ form.luaspersegi.value = eval(form.displaypersegi.value) * eval(form.displaypersegi.value)
+ }
+ 
+ function kelper(form) {
+ form.kelpersegi.value = eval(form.displaypersegi.value) * 4
+ }
+ 
+ function luaspanjang(form) {
+ form.luaspp.value = eval(form.lpp.value) * eval(form.ppp.value)
+ }
+ 
+ function kelpanjang(form) {
+ form.kelpp.value = 2*(eval(form.lpp.value)) + 2*(eval(form.ppp.value))
+ }
+
+ function luassgt(form) {
+ form.luassgtga.value = (eval(form.alassgt.value) * eval(form.tinggisgt.value))/2
+ }
+ 
+ function kelsgt(form) {
+ form.kelsgtga.value = eval(form.s1sgt.value) + eval(form.s2sgt.value) + eval(form.s3sgt.value)
+ }
+ 
+ function luasbk(form) {
+ form.luasbkt.value = (eval(form.d1bk.value) * eval(form.d2bk.value))/2
+ }
+ 
+  function kelbk(form) {
+ form.kelbkt.value = eval(form.ssbk.value) * 4
+ }
+ 
+function luast(form) {
+ form.luastr.value = ((eval(form.alast.value) + eval(form.atast.value)) * eval(form.tinggit.value))/2
+ }
+ 
+ function kelt(form) {
+ form.keltr.value = eval(form.s1t.value) + eval(form.s2t.value) + eval(form.s3t.value) + eval(form.s3t.value)
+ }
+ 
+ function luasl(form) {
+ form.luasling.value = eval(form.jr.value) * eval(form.jr.value) * 3.14
+ }
+ 
+ function kell(form) {
+ form.kelling.value = (eval(form.jr.value) + eval(form.jr.value)) * 3.14
+ }
+ 
+ function luasly(form) {
+ form.luaslay.value = (eval(form.d1l.value) * eval(form.d2l.value)) / 2
+ }
+ 
+ function kelly(form) {
+ form.kellay.value = (eval(form.s1ly.value) + eval(form.s2ly.value)) * 2
+ }
+ 
+ function luasj(form) {
+ form.luasjar.value = eval(form.alasj.value) * eval(form.tinggij.value)
+ }
+ 
+ function kelj(form) {
+ form.keljar.value = eval(form.alasj.value) * eval(form.sm.value)
+ }
+ 
+ function checkNum(str) {
+ for (var i = 0; i< str.length; i++) {
+ var ch = str.substring(i, i+1)
+ if (ch < "0" || ch >"9") {
+ if (ch != "/" && ch != "*" && ch != "+" && ch != "-" && ch != "."
+ && ch != "(" && ch!= ")") {
+ alert("invalid entry!")
+ return false
+ }
+ }
+ }
+ return true
+ }
+ 
+</SCRIPT>
+<link href="style.css" rel="stylesheet">
+<title>Kalkulator Bangun Datar</title>
+</head>
+<body>
+<h1 ALIGN="center"> <p style="border: solid 1px #29447E; background: #8a9ac5; padding: 15px; margin: 0; 
+	text-align: center; line-height: 23px; color: white; font-size: 20px">Kalkulator Bangun Datar</p>
+	<FORM NAME="bangundatar">
+ <!---------------------------------------------------------------------(1)--------------------------------------------------------------------------------->
+<table>
+<TR>
+<TD COLSPAN="3" ALIGN="left">
+ <FORM NAME="bangundatar1">
+ <TABLE id="bangundatar1" CELLSPACING="15">
+<TR>
+<TD COLSPAN="3" ALIGN="left">
+<h1 class="judul" >Bujur Sangkar</h1>
+<br>
+<h1> Sisi : </h1>
+
+<INPUT NAME="displaypersegi" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum(this.form.displaypersegi.value)) { square(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luaspersegi" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Keliling" ONCLICK="if (checkNum(this.form.displaypersegi.value)) { kelper(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="kelpersegi" style="width:60px"  SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+
+<TR>
+<TD COLSPAN="3" ALIGN="left"><br><br>
+<h1 class="judul" >Persegi Panjang</h1>
+<br>
+<h1> Panjang : </h1>
+<INPUT NAME="ppp" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Lebar : </h1>
+<INPUT NAME="lpp" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum(this.form.ppp.value)&&(this.form.lpp.value)) { luaspanjang(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luaspp" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Keliling" ONCLICK="if (checkNum(this.form.ppp.value)&&(this.form.lpp.value)) { kelpanjang(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="kelpp" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+<TR>
+<TD COLSPAN="2" ALIGN="left"><br><br>
+<h1 class="judul" >Segitiga</h1>
+<br>
+<h1> Alas : </h1>
+<INPUT NAME="alassgt" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> tinggi : </h1>
+<INPUT NAME="tinggisgt" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+<td ALIGN="left"><br><br><br><br><br>
+<h1> Sisi 1 : </h1>
+<INPUT NAME="s1sgt" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Sisi 2 : </h1>
+<INPUT NAME="s2sgt" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<td><br><br><br><br><br>
+<h1> Sisi 3 : </h1>
+<INPUT NAME="s3sgt" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</td>
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum(this.form.alassgt.value)&&(this.form.tinggisgt.value)) { luassgt(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luassgtga" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Keliling" ONCLICK="if (checkNum((this.form.s1sgt.value)&&(this.form.s2sgt.value))&&((this.form.s2sgt.value))) { kelsgt(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="kelsgtga" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+</table>
+</form>
+</td>
+
+ <!-----------------------------------------------------------------------(2)-------------------------------------------------------------------------------->
+
+<TD COLSPAN="3" ALIGN="left">
+ <FORM NAME="bangundatar2">
+ <TABLE id="bangundatar1" CELLSPACING="15">
+ 
+ 
+<TR>
+<TD COLSPAN="2" ALIGN="left">
+<h1 class="judul" >Belah Ketupat</h1>
+<br>
+<h1> Diagonal 1 : </h1>
+<INPUT NAME="d1bk" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Diagonal 2 : </h1>
+<INPUT NAME="d2bk" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+<td ALIGN="left"><br><br><br><br><br>
+<h1> Sisi : </h1>
+<INPUT NAME="ssbk" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</td>
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum(this.form.d1bk.value)&&(this.form.d2bk.value)) { luasbk(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luasbkt" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Keliling" ONCLICK="if (checkNum(this.form.ssbk.value)) { kelbk(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="kelbkt" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+
+<TR>
+<TD COLSPAN="2" ALIGN="left"><br><br>
+<h1 class="judul" >Trapesium</h1>
+<br>
+<h1> Sisi Sejajar Alas : </h1>
+<INPUT NAME="alast" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> sisi Sejajar Atas : </h1>
+<INPUT NAME="atast" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> tinggi : </h1>
+<INPUT NAME="tinggit" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<td><br><br><br><br><br>
+<h1> Sisi 1 : </h1>
+<INPUT NAME="s1t" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</td>
+</TD>
+<td ALIGN="left"><br><br><br><br><br>
+<h1> Sisi 2 : </h1>
+<INPUT NAME="s2t" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Sisi 3 : </h1>
+<INPUT NAME="s3t" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<td><br><br><br><br><br>
+<h1> Sisi 4 : </h1>
+<INPUT NAME="s4t" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</td>
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum((this.form.alast.value)&&(this.form.atast.value))&&((this.form.tinggit.value))) { luast(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luastr" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Keliling" ONCLICK="if (checkNum((this.form.s1t.value)&&(this.form.s2t.value))&&((this.form.s3t.value)&&(this.form.s4t.value))) { kelt(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="keltr" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+<TR>
+<TD COLSPAN="3" ALIGN="left"><br><br>
+<h1 class="judul" >Lingkaran</h1>
+<br>
+<h1> Jari-Jari : </h1>
+
+<INPUT NAME="jr" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum(this.form.jr.value)) { luasl(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luasling" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Keliling" ONCLICK="if (checkNum(this.form.jr.value)) { kell(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="kelling" style="width:60px"  SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+
+</table>
+
+
+ <!-----------------------------------------------------------------------(3)-------------------------------------------------------------------------------->
+
+<TD COLSPAN="3" ALIGN="left">
+ <FORM NAME="bangundatar3">
+ <TABLE id="bangundatar1" CELLSPACING="15">
+ 
+<TR>
+<TD COLSPAN="2" ALIGN="left">
+<h1 class="judul" >Layang - Layang</h1>
+<br>
+<h1> Diagonal 1 : </h1>
+<INPUT NAME="d1l" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Diagonal 2 : </h1>
+<INPUT NAME="d2l" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+<td ALIGN="left"><br><br><br><br><br>
+<h1> Sisi 1 : </h1>
+<INPUT NAME="s1ly" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Sisi 2 : </h1>
+<INPUT NAME="s2ly" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum(this.form.d1l.value)&&(this.form.d2l.value)) { luasly(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luaslay" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Keliling" ONCLICK="if (checkNum(this.form.s1ly.value)&&(this.form.s2ly.value)) { kelly(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="kellay" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+<TR>
+<TD COLSPAN="3" ALIGN="left"><br><br>
+<h1 class="judul" >Jajar Genjang</h1>
+<br>
+<h1> Alas : </h1>
+<INPUT NAME="alasj" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Tinggi : </h1>
+<INPUT NAME="tinggij" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Sisi Miring : </h1>
+<INPUT NAME="sm" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum(this.form.alasj.value)&&(this.form.tinggij.value)) { luasj(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luasjar" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Keliling" ONCLICK="if (checkNum(this.form.alasj.value)&&(this.form.sm.value)) { kelj(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="keljar" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+
+</table>
+</td>
+</tr>
+</table>
+
+
+ <!-----------------------------------------------------------------------(2)-------------------------------------------------------------------------------->
+<FORM NAME="Menu">
+	<TABLE id="menu" CELLSPACING="0">
+	<TR>
+	<TD ALIGN="center">
+	<INPUT class="myButton" TYPE="button" VALUE="Scientific" ONCLICK="window.location = 'index.html';"/>
+	</TD>
+	<TD ALIGN="center">
+	<INPUT class="myButton" TYPE="button" VALUE="Bangun Ruang" ONCLICK="window.location = 'Kal_3D.html';"/>
+	</TD>
+	<TD ALIGN="center">
+	<INPUT class="myButton" TYPE="button" VALUE="Berat Badan Ideal" ONCLICK="window.location = 'beratbadan.html';"/>
+	</TD>
+	
+
+</body>
+</html>

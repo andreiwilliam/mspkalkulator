@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+ function addChar(input, character) {
+ if(input.value == null || input.value == "0")
+ input.value = character
+ else
+ input.value += character
+ }
+
+ function volk(form) {
+ form.volkub.value = eval(form.sk.value) * eval(form.sk.value) * eval(form.sk.value)
+ }
+ 
+ function luask(form) {
+ form.luaskub.value = eval(form.sk.value) * eval(form.sk.value) * 6
+ }
+ 
+ function volb(form) {
+ form.volbal.value = eval(form.pb.value) * eval(form.lb.value) * eval(form.tb.value)
+ }
+ 
+ function luasb(form) {
+ form.luasbal.value = 2 * ((eval(form.pb.value) * eval(form.lb.value)) + (eval(form.pb.value) * eval(form.tb.value)) + (eval(form.lb.value) * eval(form.tb.value)))
+ }
+
+ function volt(form) {
+ form.voltab.value = eval(form.tinggit.value) * (eval(form.jrt.value) * eval(form.jrt.value) * 3.14)
+ }
+ 
+ function luast(form) {
+ form.luastab.value = (2 * 3.14 * eval(form.jrt.value) * eval(form.jrt.value)) + (2 * eval(form.tinggit.value) + eval(form.jrt.value))
+ }
+ 
+ function volps(form) {
+ form.volpris.value = ((eval(form.as.value) * eval(form.ts.value))/2) * eval(form.tp.value)
+ }
+ 
+  function luasps(form) {
+ form.luaspris.value = (eval(form.as.value) * eval(form.ts.value)) + (eval(form.as.value)*eval(form.tp.value))
+ }
+ 
+ 
+ function voll(form) {
+ form.vollim.value = eval(form.pal.value) * eval(form.lal.value) * eval(form.tinggil.value) * (1/4) 
+ }
+ 
+ function luasl(form) {
+ form.luaslim.value = (eval(form.pal.value) * eval(form.lal.value)) + (2 * (1/2 * eval(form.pal.value) * eval(form.tinggil.value) * 4/5)) + (2 * (1/2 * eval(form.lal.value) * eval(form.tinggil.value) * 4/5))
+ }
+ 
+ function volkr(form) {
+ form.volkru.value = (eval(form.jrk.value) * eval(form.jrk.value) * 3.14 * eval(form.tinggik.value)) * 1/3
+ }
+ 
+ function luaskr(form) {
+ form.luaskru.value = (eval(form.jrk.value) * eval(form.jrk.value) * 3.14) + (3.14 * eval(form.jrk.value) * (eval(form.tinggil.value) * 2/3)) 
+ }
+ 
+ function volbo(form) {
+ form.volbol.value = eval(form.jrb.value) * eval(form.jrb.value) * eval(form.jrb.value) * 4/3 * 3.14
+ }
+ 
+ function luasbo(form) {
+ form.luasbol.value = 4 * eval(form.jrb.value) * eval(form.jrb.value) * 3.14
+ }
+ 
+ function checkNum(str) {
+ for (var i = 0; i< str.length; i++) {
+ var ch = str.substring(i, i+1)
+ if (ch < "0" || ch >"9") {
+ if (ch != "/" && ch != "*" && ch != "+" && ch != "-" && ch != "."
+ && ch != "(" && ch!= ")") {
+ alert("invalid entry!")
+ return false
+ }
+ }
+ }
+ return true
+ }
+ 
+</SCRIPT>
+<link href="style.css" rel="stylesheet">
+<title>Kalkulator Bangun Ruang</title>
+</head>
+<body>
+<h1 ALIGN="center"> <p style="border: solid 1px #29447E; background: #8a9ac5; padding: 15px; margin: 0; 
+	text-align: center; line-height: 23px; color: white; font-size: 20px">Kalkulator Bangun Ruang</p>
+	<FORM NAME="bangundatar">
+ <!---------------------------------------------------------------------(1)--------------------------------------------------------------------------------->
+<table>
+<TR>
+<TD COLSPAN="3" ALIGN="left">
+ <FORM NAME="bangundatar1">
+ <TABLE id="bangundatar1" CELLSPACING="15">
+<TR>
+<TD COLSPAN="3" ALIGN="left">
+<h1 class="judul" >Kubus</h1>
+<br>
+<h1> Sisi : </h1>
+
+<INPUT NAME="sk" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Volume" ONCLICK="if (checkNum(this.form.sk.value)) { volk(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="volkub" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum(this.form.sk.value)) { luask(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luaskub" style="width:60px"  SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+
+<TR>
+<TD COLSPAN="3" ALIGN="left"><br><br>
+<h1 class="judul" >Balok</h1>
+<br>
+<h1> Panjang : </h1>
+<INPUT NAME="pb" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Lebar : </h1>
+<INPUT NAME="lb" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Tinggi : </h1>
+<INPUT NAME="tb" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Volume" ONCLICK="if (checkNum((this.form.pb.value)&&(this.form.lb.value))&&(this.form.lb.value)) { volb(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="volbal" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum((this.form.pb.value)&&(this.form.lb.value))&&(this.form.lb.value)) { luasb(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luasbal" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+<TR>
+<TD COLSPAN="2" ALIGN="left"><br><br>
+<h1 class="judul" >Tabung</h1>
+<br>
+<h1> Jari - Jari : </h1>
+<INPUT NAME="jrt" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> tinggi : </h1>
+<INPUT NAME="tinggit" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Volume" ONCLICK="if (checkNum(this.form.jrt.value)&&(this.form.tinggit.value)) { volt(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="voltab" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum(this.form.jrt.value)&&(this.form.tinggit.value)) { luast(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luastab" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+</table>
+</form>
+</td>
+
+ <!-----------------------------------------------------------------------(2)-------------------------------------------------------------------------------->
+
+<TD COLSPAN="3" ALIGN="left">
+ <FORM NAME="bangundatar2">
+ <TABLE id="bangundatar1" CELLSPACING="15">
+ 
+ 
+<TR>
+<TD COLSPAN="2" ALIGN="left">
+<h1 class="judul" >Prisma Segitiga</h1>
+<br>
+<h1> Alas Segitiga : </h1>
+<INPUT NAME="as" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Tinggi Segitiga : </h1>
+<INPUT NAME="ts" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Tinggi Prisma : </h1>
+<INPUT NAME="tp" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Volume" ONCLICK="if (checkNum((this.form.as.value)&&(this.form.ts.value))&&(this.form.tp.value)) { volps(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="volpris" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum((this.form.as.value)&&(this.form.ts.value))&&(this.form.tp.value)) { luasps(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luaspris" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+
+<TR>
+<TD COLSPAN="2" ALIGN="left"><br><br>
+<h1 class="judul" >Limas Segiempat</h1>
+<br>
+<h1> Panjang Alas : </h1>
+<INPUT NAME="pal" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Lebar Alas   : </h1>
+<INPUT NAME="lal" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Tinggi : </h1>
+<INPUT NAME="tinggil" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Volume" ONCLICK="if (checkNum((this.form.pal.value)&&(this.form.lal.value))&&((this.form.tinggil.value))) { voll(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="vollim" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum((this.form.pal.value)&&(this.form.lal.value))&&((this.form.tinggil.value))) { luasl(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luaslim" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+<TR>
+<TD COLSPAN="3" ALIGN="left"><br><br>
+<h1 class="judul" >Kerucut</h1>
+<br>
+<h1> Jari-Jari : </h1>
+<INPUT NAME="jrk" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+<h1> Tinggi : </h1>
+<INPUT NAME="tinggik" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Volume" ONCLICK="if (checkNum(this.form.tinggik.value)&&(this.form.jrk.value)) { volkr(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="volkru" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum(this.form.tinggik.value)&&(this.form.jrk.value)) { luaskr(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luaskru" style="width:60px"  SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+
+</table>
+
+
+ <!-----------------------------------------------------------------------(3)-------------------------------------------------------------------------------->
+
+<TD COLSPAN="3" ALIGN="left">
+ <FORM NAME="bangundatar3">
+ <TABLE id="bangundatar1" CELLSPACING="15">
+ 
+<TR>
+<TD COLSPAN="2" ALIGN="left">
+<h1 class="judul" >Bola</h1>
+<br>
+<h1> Jari - Jari : </h1>
+<INPUT NAME="jrb" style="width:60px" VALUE="0" SIZE="28" MAXLENGTH="25">
+</TD>
+</tr>
+<tr>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Volume" ONCLICK="if (checkNum(this.form.jrb.value)) { volbo(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="volbol" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+<td ALIGN="left">
+<INPUT class="tombol2" TYPE="button" VALUE="Luas" ONCLICK="if (checkNum(this.form.jrb.value)) { luasbo(this.form) }">
+</td>
+<td ALIGN="left" >
+<INPUT NAME="luasbol" style="width:60px" SIZE="28" MAXLENGTH="25">
+</td>
+</TR>
+
+
+
+</table>
+</td>
+</tr>
+</table>
+
+
+ <!-----------------------------------------------------------------------(2)-------------------------------------------------------------------------------->
+<FORM NAME="Menu">
+	<TABLE id="menu" CELLSPACING="0">
+	<TR>
+	<TD ALIGN="center">
+	<INPUT class="myButton" TYPE="button" VALUE="Scientific" ONCLICK="window.location = 'index.html';"/>
+	</TD>
+	<TD ALIGN="center">
+	<INPUT class="myButton" TYPE="button" VALUE="Bangun Datar" ONCLICK="window.location = 'Kal_2D.html';"/>
+	</TD>
+	<TD ALIGN="center">
+	<INPUT class="myButton" TYPE="button" VALUE="Berat Badan Ideal" ONCLICK="window.location = 'beratbadan.html';"/>
+	</TD>
+	
+
+</body>
+</html>
